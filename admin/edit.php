@@ -66,7 +66,7 @@ $latitude = $results['latitude'];
 <html>
 <head>
 <meta charset="utf-8">
-<title><?php echo $name; ?> &middot; Edit Location</title>
+<title><?php echo $name; ?> &middot; Edit Location &middot; Ottawa's Splendid Splash Pad Locator</title>
 </head>
 <body>
 

@@ -22,7 +22,7 @@ $results = $db->query('
 <body>
 
 	<header>	
-		<h1>Ottawa's Splendid Splash Pad Locator</h1>
+		<h1>Welcome to Ottawa's Splendid Splash Pad Locator</h1>
 		<nav>
 			<h2>Navigation</h2>
 			<ul>

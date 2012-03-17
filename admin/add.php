@@ -44,7 +44,7 @@ exit;
 <html>
 <head>
 <meta charset="utf-8">
-	<title>Add a Location</title>
+	<title>Add a Location &middot; Ottawa's Splendid Splash Pad Locator</title>
 </head>
 <body>
 <h1>Add a Location</h1>

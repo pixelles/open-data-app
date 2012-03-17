@@ -3,8 +3,6 @@
 require_once '../includes/filter-wrapper.php';
 require_once '../includes/db.php';
 
-// `->exec()` allows us to perform SQL and NOT expect results(insert)
-// `->query()` allows us to perform SQL and expect results(select)
 $results = $db->query('
 	SELECT id, name, street_address, longitude, latitude
 	FROM locations
@@ -42,8 +40,8 @@ $results = $db->query('
 		<ul>
 			<?php foreach ($results as $location) : ?>
 				<li><a href="../single.php?id=<?php echo $location['id']; ?>"><?php echo $location['name']; ?></a></li>
-				&bull; <a href="edit.php?id=<?php echo $location['id']; ?>">Edit</a>
-				&bull; <a href="delete.php?id=<?php echo $location['id']; ?>">Delete</a>
+				&middot; <a href="edit.php?id=<?php echo $location['id']; ?>">Edit</a>
+				&middot; <a href="delete.php?id=<?php echo $location['id']; ?>">Delete</a>
 			<?php endforeach; ?>
 		</ul>
 	</article>
