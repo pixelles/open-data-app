@@ -1,7 +1,5 @@
 <?php
 
-require_once '../includes/filter-wrapper.php';
-
 $errors = array();
 
 $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
