@@ -23,7 +23,7 @@ $results = $db->query('
 		<nav>
 			<h2>Navigation</h2>
 			<ul>
-				<li><a href="index.php">Home</a></li>
+				<li><a href="../index.php">Home</a></li>
 				<li><a href="admin/index.php">Administration</a></li>
 			</ul>
 		</nav>
