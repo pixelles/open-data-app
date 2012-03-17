@@ -3,22 +3,24 @@
 require_once 'includes/filter-wrapper.php';
 require_once 'includes/db.php';
 
-// `->exec()` allows us to perform SQL and NOT expect results(insert)
-// `->query()` allows us to perform SQL and expect results(select)
 $results = $db->query('
 	SELECT id, name, street_address, longitude, latitude
 	FROM locations
 	ORDER BY street_address DESC
 ');
 
-?><!DOCTYPE HTML>
-<html>
+?>
+
+<!DOCTYPE HTML>
+<html lang=en-ca>
 <head>
-	<meta charset="utf-8">
-	<title>MTM1531: Project 01 - Open Data Application Prototype</title>
+	<meta charset=utf-8>
+	<title>Home &middot; Ottawa's Splendid Splash Pad Locator</title>
 	<link href="css/public.css" rel="stylesheet">
+	<script src="js/modernizr.dev.js"></script>
 </head>
 <body>
+
 	<header>	
 		<h1>Ottawa's Splendid Splash Pad Locator</h1>
 		<nav>
@@ -29,7 +31,6 @@ $results = $db->query('
 			</ul>
 		</nav>
 	</header>
-	
 	<article>
 	
 		<h2>Locations</h2>
@@ -49,10 +50,13 @@ $results = $db->query('
 		<div id="map"></div>
 		
 	</article>
-	
+
 </body>
 </html>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCkXYdCxOIr9-DwpF18ejWqV8C01jbmgxA&sensor=false"></script>
 <script src="js/google-maps.js"></script>
+
+
+	

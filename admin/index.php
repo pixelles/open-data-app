@@ -15,7 +15,7 @@ $results = $db->query('
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Administration</title>
+	<title>Administration &middot; Ottawa's Splendid Splash Pad Locator</title>
 </head>
 <body>
 	<header>	
