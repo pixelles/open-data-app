@@ -17,16 +17,20 @@ $longitude = filter_input(INPUT_POST, 'longitude', FILTER_SANITIZE_STRING);
 $latitude = filter_input(INPUT_POST, 'latitude', FILTER_SANITIZE_STRING);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-if (empty($movie_title)) {
-$errors['movie_title'] = true;
+if (empty($name)) {
+$errors['name'] = true;
 }
 
-if (empty($release_date)) {
-$errors['release_date'] = true;
+if (empty($street_address)) {
+$errors['street_address'] = true;
 }
 
-if (empty($director)) {
-$errors['director'] = true;
+if (empty($longitude)) {
+$errors['longitude'] = true;
+}
+
+if (empty($latitude)) {
+$errors['latitude'] = true;
 }
 
 if (empty($errors)) {
@@ -36,9 +40,9 @@ SET name = :name, street_address = :street_address, longitude = :longitude, lati
 WHERE id = :id
 ');
 $sql->bindValue(':name', $name, PDO::PARAM_STR);
-$sql->bindValue(':street_address', $street_addresse, PDO::PARAM_STR);
+$sql->bindValue(':street_address', $street_address, PDO::PARAM_STR);
 $sql->bindValue(':longitude', $longitude, PDO::PARAM_STR);
-$sql->bindValue(':longitude', $latitude, PDO::PARAM_STR);
+$sql->bindValue(':latitude', $latitude, PDO::PARAM_STR);
 $sql->bindValue(':id', $id, PDO::PARAM_INT);
 $sql->execute();
 
@@ -69,7 +73,19 @@ $latitude = $results['latitude'];
 </head>
 <body>
 
-<h1>Edit <?php echo $name; ?></h1>
+<header>	
+		<h1>Ottawa's Splendid Splash Pad Locator</h1>
+		<nav>
+			<h2>Navigation</h2>
+			<ul>
+				<li><a href="../index.php">Home</a></li>
+				<li><a href="index.php">Administration</a></li>
+				<li><a href="http://imm.edumedia.ca/dupe0012/open-data-app">Project Brief</a>
+			</ul>
+		</nav>
+	</header>
+
+<h2>Edit <?php echo $name; ?></h2>
 <div class="delete">
 <form method="post" action="edit.php?id=<?php echo $id; ?>">
 <div>

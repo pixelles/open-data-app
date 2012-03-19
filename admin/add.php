@@ -45,7 +45,19 @@ exit;
 	<title>Add a Location &middot; Ottawa's Splendid Splash Pad Locator</title>
 </head>
 <body>
-<h1>Add a Location</h1>
+	<header>	
+		<h1>Ottawa's Splendid Splash Pad Locator</h1>
+		<nav>
+			<h2>Navigation</h2>
+			<ul>
+				<li><a href="../index.php">Home</a></li>
+				<li><a href="index.php">Administration</a></li>
+				<li><a href="http://imm.edumedia.ca/dupe0012/open-data-app">Project Brief</a>
+			</ul>
+		</nav>
+	</header>
+	
+<h2>Add a Location</h2>
 <div class="delete">
 <form method="post" action="add.php">
 <div>

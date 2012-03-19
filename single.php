@@ -45,6 +45,7 @@ if (empty($results)) {
 			<ul>
 				<li><a href="index.php">Home</a></li>
 				<li><a href="admin/index.php">Administration</a></li>
+				<li><a href="http://imm.edumedia.ca/dupe0012/open-data-app">Project Brief</a>
 			</ul>
 		</nav>
 	</header>
