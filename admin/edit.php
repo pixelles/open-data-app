@@ -80,7 +80,7 @@ $latitude = $results['latitude'];
 			<ul>
 				<li><a href="../index.php">Home</a></li>
 				<li><a href="index.php">Administration</a></li>
-				<li><a href="http://imm.edumedia.ca/dupe0012/open-data-app">Project Brief</a>
+				<li><a href="http://imm.edumedia.ca/dupe0012/open-data-app">Open-Data App Project Brief</a>
 			</ul>
 		</nav>
 	</header>
