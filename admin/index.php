@@ -1,5 +1,11 @@
 <?php
 
+require_once '../includes/users.php';
+if (!user_is_signed_in()) {
+	header('Location: sign-in.php');
+	exit;
+}
+
 require_once '../includes/db.php';
 
 $results = $db->query('
@@ -22,6 +28,7 @@ $results = $db->query('
 			<ul>
 				<li><a href="../index.php">Home</a></li>
 				<li><a href="index.php">Administration</a></li>
+				<li><a href="sign-out.php">Sign Out</a></li>
 				<li><a href="http://imm.edumedia.ca/dupe0012/open-data-app">Project Brief</a>
 			</ul>
 		</nav>

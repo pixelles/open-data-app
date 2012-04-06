@@ -1,0 +1,22 @@
+#Creates a connection to the database
+
+#We are using PDO to abstract away the database type we are connecting to
+#PDO allows us to connect to many different database types: MySQL, SQLite, MSSQL, Oracle, etc.
+
+
+#WAMP's default user is 'root'    
+#MAMP's  default user is also 'root' 
+#Edumedia's username is your Algonquin username, like abcd1234
+SetEnv DB_USER root
+
+#WAMP's default password is an empty string
+#MAMP's default password is 'root'
+#Edumedia's password is your student number, without the first 0
+SetEnv DB_PASS 
+
+# Data Source Name
+# The location and the name of the database
+
+SetEnv DB_DSN mysql:dbname=dupe0012;host=localhost
+#localhost above means the the database server is on the same computer as this PHP file
+
