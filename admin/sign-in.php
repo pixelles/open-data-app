@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="email" id="email" name="email" required>
 	</div>
 	<div>
-		<label for="password">Password <?php if (isset($errors['password-no-match'])) : ?> <strong>Passwords don't match</strong><?php endif; ?></label>
+		<label for="password">Password</label>
 		<input type="password" id="password" name="password" required>
 	</div>
 	<button type="submit">Sign In</button>
