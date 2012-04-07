@@ -26,7 +26,7 @@ function get_hashed_password ($password) {
 	return crypt($password, $salt);
 }
 
-function user_signed_in () {
+function user_is_signed_in () {
 	session_start();
 	
 	if (
