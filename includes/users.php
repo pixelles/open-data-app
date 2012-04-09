@@ -1,7 +1,15 @@
 <?php
 
-// A self-contained file that holds all the functions we need for user authentication 
-
+/**
+ * Description: a self-contained file that holds all the functions we need for user authentication
+ *
+ * @package com.trishajessica.splashpadlocator
+ * @copyright 2012 Trisha Jessica
+ * @author Trisha Jessica <hello@trishajessica.ca>
+ * @link <http://www.pixelles.github.com/open-data-app>
+ * @license New BSD License <https://github.com/pixelles/open-data-app/blob/master/LICENSE.txt>
+ * @version <https://github.com/pixelles/open-data-app/blob/master/VERSION.txt>
+ */
 
 function user_create ($db, $email, $password) {
 	$hashed_password = get_hashed_password($password);
@@ -17,9 +25,6 @@ function user_create ($db, $email, $password) {
 }
 
 function get_hashed_password ($password) {
-	
-	//Generates a random salt to be stored with the password
-	//It helps with security and the Blowfish algorithm requires it
 	$rand = substr(strtr(base64_encode(openssl_random_pseudo_bytes(16)), '+', '.'), 0, 22);
 	$salt = '$2a$12$' . $rand;
 	
