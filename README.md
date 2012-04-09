@@ -10,7 +10,7 @@ Ottawa's Splendid Splash Pad Locator is an open data application serving the Ott
 - Splash Pad Rating System
 
 ##Copyright 
-BSD
+[BSD](https://github.com/pixelles/open-data-app/blob/master/LICENSE.txt)
 
 ##Setup
 1. Import the 'open-data-app.sql' file to your database. This SQL file contains all the location data such as the latitude, altitude, street address fields and a field for the name of the splash pad.
