@@ -13,7 +13,7 @@ require_once 'includes/users.php';
 
 // A small utility file for us to create an admin user
 // THIS FILE SHOULD NEVER BE PUBLICLY ACCESSIBLE
-$email = 'bradlet@algonquinlive.com';
+$email = 'bradlet@algonquincollege.com';
 $password = 'password';
 
 user_create($db, $email, $password);
