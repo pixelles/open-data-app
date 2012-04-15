@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 }
 
-require_once '../includes/admin-top.php';
+require_once '../includes/admin-header.php';
 
 ?>
 <article>
@@ -58,4 +58,4 @@ require_once '../includes/admin-top.php';
 </form>
 </article>
 
-<?php require_once '../includes/admin-bottom.php'; ?>
+<?php require_once '../includes/admin-footer.php'; ?>

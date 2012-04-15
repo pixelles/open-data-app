@@ -35,7 +35,7 @@ $rating = 0;
 
 $cookie = get_rate_cookie();
 
-require_once '/includes/top.php';
+require_once '/includes/header.php';
 
 ?>
 <article>
@@ -71,4 +71,4 @@ require_once '/includes/top.php';
     <div class="back"> <a href="index.php">Back</a> </div>
 	
 </article>
-<?php require_once '/includes/bottom.php'; ?>
+<?php require_once '/includes/footer.php'; ?>

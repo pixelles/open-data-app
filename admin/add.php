@@ -38,7 +38,7 @@ exit;
 }
 }
 
-require_once '../includes/admin-top.php';
+require_once '../includes/admin-header.php';
 
 ?>
 <article>
@@ -68,4 +68,4 @@ require_once '../includes/admin-top.php';
 
     <div class="back"> <a href="index.php">Back</a> </div>
 
-<?php require_once '../includes/admin-bottom.php'; ?>
+<?php require_once '../includes/admin-footer.php'; ?>

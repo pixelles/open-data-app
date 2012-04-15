@@ -65,7 +65,7 @@ $longitude = $results['longitude'];
 $latitude = $results['latitude'];
 }
 
-require_once '../includes/admin-top.php';
+require_once '../includes/admin-header.php';
 
 ?>
 
@@ -99,4 +99,4 @@ require_once '../includes/admin-top.php';
 	
 </article>
 	
-<?php require_once '../includes/admin-bottom.php'; ?>
+<?php require_once '../includes/admin-footer.php'; ?>

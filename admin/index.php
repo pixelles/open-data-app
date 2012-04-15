@@ -14,7 +14,7 @@ $results = $db->query('
 	ORDER BY street_address DESC
 ');
 
-require_once '../includes/admin-top.php';
+require_once '../includes/admin-header.php';
 
 ?>
 	
@@ -37,4 +37,4 @@ require_once '../includes/admin-top.php';
 		</ul>
 	</article>
 	
-<?php require_once '../includes/admin-bottom.php'; ?>
+<?php require_once '../includes/admin-footer.php'; ?>

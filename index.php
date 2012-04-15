@@ -8,7 +8,7 @@ $results = $db->query('
 	ORDER BY rate_total DESC
 ');
 
-require_once 'includes/top.php';
+require_once 'includes/header.php';
 
 ?>
 	<section>
@@ -59,4 +59,4 @@ require_once 'includes/top.php';
 		
 	</article>
 
-<?php require_once 'includes/bottom.php'; ?>
+<?php require_once 'includes/footer.php'; ?>
