@@ -65,25 +65,11 @@ $longitude = $results['longitude'];
 $latitude = $results['latitude'];
 }
 
-?><!DOCTYPE HTML>
-<html>
-<head>
-<meta charset="utf-8">
-<title><?php echo $name; ?> &middot; Edit Location &middot; Ottawa's Splendid Splash Pad Locator</title>
-</head>
-<body>
+require_once '../includes/admin-top.php';
 
-<header>	
-		<h1>Ottawa's Splendid Splash Pad Locator</h1>
-		<nav>
-			<h2>Navigation</h2>
-			<ul>
-				<li><a href="../index.php">Home</a></li>
-				<li><a href="index.php">Administration</a></li>
-				<li><a href="http://imm.edumedia.ca/dupe0012/open-data-app">Open-Data App Project Brief</a>
-			</ul>
-		</nav>
-	</header>
+?>
+
+<article>
 
 <h2>Edit <?php echo $name; ?></h2>
 <div class="delete">
@@ -110,5 +96,7 @@ $latitude = $results['latitude'];
 
 
     <div class="back"> <a href="index.php">Back</a> </div>
-</body>
-</html>
+	
+</article>
+	
+<?php require_once '../includes/admin-bottom.php'; ?>

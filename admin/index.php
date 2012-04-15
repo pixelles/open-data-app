@@ -3,10 +3,10 @@
 require_once '../includes/db.php';
 require_once '../includes/users.php';
 
-if (!user_is_signed_in()) {
+/*if (!user_is_signed_in()) {
 	header('Location: sign-in.php');
 	exit;
-}
+}*/
 
 $results = $db->query('
 	SELECT id, name, street_address, longitude, latitude
@@ -14,25 +14,9 @@ $results = $db->query('
 	ORDER BY street_address DESC
 ');
 
-?><!DOCTYPE HTML>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Administration &middot; Ottawa's Splendid Splash Pad Locator</title>
-</head>
-<body>
-	<header>	
-		<h1>Ottawa's Splendid Splash Pad Locator</h1>
-		<nav>
-			<h2>Navigation</h2>
-			<ul>
-				<li><a href="../index.php">Home</a></li>
-				<li><a href="index.php">Administration</a></li>
-				<li><a href="sign-out.php">Sign Out</a></li>
-				<li><a href="http://imm.edumedia.ca/dupe0012/open-data-app">Project Brief</a>
-			</ul>
-		</nav>
-	</header>
+require_once '../includes/admin-top.php';
+
+?>
 	
 	<article>
 		<h2>Add a New Data Entry</h2>
@@ -53,5 +37,4 @@ $results = $db->query('
 		</ul>
 	</article>
 	
-</body>
-</html>
+<?php require_once '../includes/admin-bottom.php'; ?>

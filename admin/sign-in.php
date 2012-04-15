@@ -3,10 +3,10 @@
 require_once '../includes/db.php';
 require_once '../includes/users.php';
 
-if (user_is_signed_in()) {
-	header('Location: index.php');
-	exit;
-}
+//if (user_is_signed_in()) {
+//	header('Location: index.php');
+//	exit;
+//}
 
 $errors = array();
 $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
@@ -40,17 +40,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		}
 	}
 }
+
+require_once '../includes/admin-top.php';
+
 ?>
-
-<!DOCTYPE HTML>
-<html>
-<head>
-<meta charset="utf-8">
-    <title>Sign In</title>
-</head>
-
-<body>
-
+<article>
 <form method="post" action="sign-in.php">
 	<div>
     	<label for="email">E-mail Address<?php if (isset($errors['email'])) : ?> <strong>is required</strong><?php endif; ?><?php if (isset($errors['user-non-existent'])) : ?> <strong>This user does not exist</strong><?php endif; ?></label>
@@ -62,6 +56,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	</div>
 	<button type="submit">Sign In</button>
 </form>
+</article>
 
-</body>
-</html>
+<?php require_once '../includes/admin-bottom.php'; ?>

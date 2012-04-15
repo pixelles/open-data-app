@@ -38,25 +38,10 @@ exit;
 }
 }
 
-?><!DOCTYPE HTML>
-<html>
-<head>
-<meta charset="utf-8">
-	<title>Add a Location &middot; Ottawa's Splendid Splash Pad Locator</title>
-</head>
-<body>
-	<header>	
-		<h1>Ottawa's Splendid Splash Pad Locator</h1>
-		<nav>
-			<h2>Navigation</h2>
-			<ul>
-				<li><a href="../index.php">Home</a></li>
-				<li><a href="index.php">Administration</a></li>
-				<li><a href="http://imm.edumedia.ca/dupe0012/open-data-app">Project Brief</a>
-			</ul>
-		</nav>
-	</header>
-	
+require_once '../includes/admin-top.php';
+
+?>
+<article>
 <h2>Add a Location</h2>
 <div class="delete">
 <form method="post" action="add.php">
@@ -79,7 +64,8 @@ exit;
 <button type="submit">Add</button>
 </form>
 </div>
+</article>
 
     <div class="back"> <a href="index.php">Back</a> </div>
-</body>
-</html>
+
+<?php require_once '../includes/admin-bottom.php'; ?>

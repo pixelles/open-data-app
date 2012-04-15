@@ -3,35 +3,14 @@
 require_once 'includes/db.php';
 
 $results = $db->query('
-	SELECT id, name, street_address, longitude, latitude
+	SELECT id, name, street_address, longitude, latitude, rate_total, rate_count
 	FROM locations
-	ORDER BY street_address DESC
+	ORDER BY rate_total DESC
 ');
 
+require_once 'includes/top.php';
+
 ?>
-
-<!DOCTYPE HTML>
-<html lang=en-ca>
-<head>
-	<meta charset=utf-8>
-	<title>Home &middot; Ottawa's Splendid Splash Pad Locator</title>
-	<link href="css/public.css" rel="stylesheet">
-	<script src="js/modernizr.dev.js"></script>
-</head>
-<body>
-
-	<header>	
-		<h1>Welcome to Ottawa's Splendid Splash Pad Locator</h1>
-		<nav>
-			<h2>Navigation</h2>
-			<ul>
-				<li><a href="index.php">Home</a></li>
-				<li><a href="admin/index.php">Administration</a></li>
-				<li><a href="http://imm.edumedia.ca/dupe0012/open-data-app">Project Brief</a>
-			</ul>
-		</nav>
-	</header>
-	
 	<section>
 		<button id="geo">Find my Location</button>
 		<form id="geo-form">
@@ -46,27 +25,38 @@ $results = $db->query('
 		
 		<ol class="locations">
 			<?php foreach ($results as $location) : ?>
-				<li itemscope itemtype="http://schema.org/TouristAttraction">
+			
+			<?php
+				if ($location['rate_count'] > 0) {
+					$rating = round($location['rate_total'] / $location['rate_count']);
+				} else {
+					$rating = 0;
+				}
+			?>
+				<li itemscope itemtype="http://schema.org/TouristAttraction" data-id="<?php echo $location['id']; ?>">
+				
+				<strong class="distance"></strong>
+				
 					<a href="single.php?id=<?php echo $location['id']; ?>" itemprop="name"><?php echo $location['name']; ?></a>
+					
 					<span itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
 						<meta itemprop="latitude" content="<?php echo $location['latitude']; ?>">
 						<meta itemprop="longitude" content="<?php echo $location['longitude']; ?>">
 					</span>
+					
+					<meter value="<?php echo $rating; ?>" min="0" max="5"><?php echo $rating; ?> out of 5</meter>
+					<ol class="rater">
+					<?php for ($i = 1; $i <= 5; $i++) : ?>
+						<?php $class = ($i <= $rating) ? 'is-rated' : ''; ?>
+						<li class="rater-level <?php echo $class; ?>">❤</li>
+						<?php endfor; ?>
+					</ol>
 				</li>
-			<?php endforeach; ?>
-		</ol>
+				<?php endforeach; ?>
+				</ol>
 		
 		<div id="map"></div>
 		
 	</article>
 
-</body>
-</html>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCkXYdCxOIr9-DwpF18ejWqV8C01jbmgxA&sensor=false"></script>
-<script src="js/splash-pad-locator.js"></script>
-<script src="js/latlng.min.js"></script>
-
-
-	
+<?php require_once 'includes/bottom.php'; ?>
