@@ -8,9 +8,10 @@ if (empty($id)) {
 }
 
 require_once 'includes/db.php';
+require_once 'includes/functions.php';
 
 $sql = $db->prepare('
-	SELECT id, name, street_address, longitude, latitude
+	SELECT id, name, street_address, longitude, latitude, rate_total,rate_count
 	FROM locations
 	WHERE id = :id
 ');
@@ -26,40 +27,48 @@ if (empty($results)) {
 	exit;
 }
 
+if ($results['rate_count'] > 0) {
+$rating = round($results['rate_total'] / $results['rate_count']);
+} else {
+$rating = 0;
+}
+
+$cookie = get_rate_cookie();
+
+require_once '/includes/top.php';
+
 ?>
-
-<!DOCTYPE HTML>
-<html lang=en-ca>
-<head>
-	<meta charset=utf-8>
-	<title><?php echo $results['name']; ?> &middot; Ottawa's Splendid Splash Pad Locator</title>
-	<link href="css/public.css" rel="stylesheet">
-	<script src="js/modernizr.dev.js"></script>
-</head>
-<body>
-
-	<header>	
-		<h1>Ottawa's Splendid Splash Pad Locator</h1>
-		<nav>
-			<h2>Navigation</h2>
-			<ul>
-				<li><a href="index.php">Home</a></li>
-				<li><a href="admin/index.php">Administration</a></li>
-				<li><a href="http://imm.edumedia.ca/dupe0012/open-data-app">Project Brief</a>
-			</ul>
-		</nav>
-	</header>
-	
-	<article>
-		<h1><?php echo $results['name']; ?></h1>
+<article>
+		<h2><?php echo $results['name']; ?></h2>
 		 <ul>
+		 	<li><b>Average Rating:</b> <meter value="<?php echo $rating; ?>" min="0" max="5"><?php echo $rating; ?> out of 5</meter></li>
 			<li><b>Street Address:</b> <?php echo $results['street_address']; ?></p></li>
 			<li><b>Longitude:</b> <?php echo $results['longitude']; ?></p></li>
 			<li><b>Latitude:</b> <?php echo $results['longitude']; ?></p></li>
 		</ul>
-	 </article>
+		
+		<?php if (isset($cookie[$id])) : ?>
+
+		<h2>Your rating</h2>
+		<ol class="rater rater-usable">
+		<?php for ($i = 1; $i <= 5; $i++) : ?>
+		<?php $class = ($i <= $cookie[$id]) ? 'is-rated' : ''; ?>
+		<li class="rater-level <?php echo $class; ?>">❤</li>
+		<?php endfor; ?>
+		</ol>
+		
+		<?php else : ?>
+		
+		<h2>Rate</h2>
+		<ol class="rater rater-usable">
+		<?php for ($i = 1; $i <= 5; $i++) : ?>
+		<li class="rater-level"><a href="rate.php?id=<?php echo $results['id']; ?>&rate=<?php echo $i; ?>">❤</a></li>
+		<?php endfor; ?>
+		</ol>
+		
+		<?php endif; ?>
 	 
     <div class="back"> <a href="index.php">Back</a> </div>
 	
-</body>
-</html>
+</article>
+<?php require_once '/includes/bottom.php'; ?>
