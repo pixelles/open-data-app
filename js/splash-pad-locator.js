@@ -1,4 +1,9 @@
 $(document).ready(function () {
+	
+	var locations = [];
+	
+	/* Google Maps */
+	if (document.getElementById('map')) {
 	// Create an object that holds options for the GMap
 	var gmapOptions = {
 		center : new google.maps.LatLng(45.3631333357264,-75.672066666632)
@@ -20,13 +25,20 @@ $(document).ready(function () {
 		// Style the content in your CSS
 		var info = '<div class="info-window">'
 			+ '<strong>' + location + '</strong>'
+			+ <a href="single.php?id=' + $(this).attr('data-id') + '">Rate this location</a>
 			+ '</div>'
 		;
 
 		// Determine this dino's latitude and longitude
-		var latitude = $(this).find('meta[itemprop="latitude"]').attr('content');
-		var longitude = $(this).find('meta[itemprop="longitude"]').attr('content');
+		var latitude = parseFloat($(this).find('meta[itemprop="latitude"]').attr('content'));
+		var longitude = parseFloat($(this).find('meta[itemprop="longitude"]').attr('content'));
 		var pos = new google.maps.LatLng(latitude, longitude);
+
+		locations.push({
+			id : $(this).attr('data-id')
+			, lat : lat
+			, lng : lng
+		});
 
 		// Create a marker object for this dinosaur
 		var marker = new google.maps.Marker({
@@ -40,12 +52,12 @@ $(document).ready(function () {
 		// A function for showing this dinosaur's info window
 		function showInfoWindow (ev) {
 			if (ev.preventDefault) {
-				ev.preventDefault();
+					ev.preventDefault();
 			}
 
 			// Close the previous info window first, if one already exists
 			if (infoWindow) {
-				infoWindow.close();
+					infoWindow.close();
 			}
 
 			// Create an info window object and assign it the content
@@ -59,13 +71,30 @@ $(document).ready(function () {
 		// Add a click event listener for the marker
 		google.maps.event.addListener(marker, 'click', showInfoWindow);
 		// Add a click event listener to the list item
-		google.maps.event.addDomListener($(this).children('a').get(0), 'click', showInfoWindow);
+		google.maps.event.addDomListener($(this).get(0), 'click', showInfoWindow);
 	});
+}
 
-	/****************************************************/
-	/***** Geolocation **********************************/
-	/****************************************************/
+/* Ratings */
 
+	var $raterLi = $('.rater-usable li');
+	
+	// Makes all the lower ratings highlight when hovering over a star
+	$raterLi
+		.on('mouseenter', function (ev) {
+		var current = $(this).index();
+	
+		for (var i = 0; i < current; i++) {
+			$raterLi.eq(i).addClass('is-rated-hover');
+		}
+	})
+	
+	.on('mouseleave', function (ev) {
+		$raterLi.removeClass('is-rated-hover');
+	})
+;
+
+/* Geolocation */
 	var userMarker;
 
 	// A function to display the user on the Google Map
@@ -154,5 +183,7 @@ $(document).ready(function () {
 		);
 	});
 });
+
+
 
 
