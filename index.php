@@ -11,52 +11,74 @@ $results = $db->query('
 require_once 'includes/header.php';
 
 ?>
-	<section>
-		<button id="geo">Find my Location</button>
-		<form id="geo-form">
-			<label for="adr">Address</label>
-			<input id="adr">
-		</form>
-	</section>
+
+<section>
+
+	<h2>Locator</h2>
+	<div id="map"></div>
 	
-	<article>
+</section>
+
+<section>
+
+	<h2 class="margin-h2">Splash Pads</h2>
+	<div class="splash-pad-locations">
 	
-		<h2>Locations</h2>
-		
-		<ol class="locations">
-			<?php foreach ($results as $location) : ?>
+		<div>
 			
-			<?php
-				if ($location['rate_count'] > 0) {
-					$rating = round($location['rate_total'] / $location['rate_count']);
-				} else {
-					$rating = 0;
-				}
-			?>
-				<li itemscope itemtype="http://schema.org/TouristAttraction" data-id="<?php echo $location['id']; ?>">
+			<form id="geo-form">
+				<label for="adr">Address</label>
+				<input id="adr" type="search" placeholder="Address or Postal Code">
+				<button type="submit" id="search-button"></button>
+			</form>
+			
+			<button id="geo-button"></button>
+			
+		</div>
+	
+		<div>
+
+			<ol class="locations">
+			
+				<?php foreach ($results as $location) : ?>
 				
-				<strong class="distance"></strong>
+				<?php
+					if ($location['rate_count'] > 0) {
+						$rating = round($location['rate_total'] / $location['rate_count']);
+					} else {
+						$rating = 0;
+					}
+				?>
 				
-					<a href="single.php?id=<?php echo $location['id']; ?>" itemprop="name"><?php echo $location['name']; ?></a>
+				<li itemscope itemtype="http://schema.org/TouristAttraction" data-id="<?php echo $location['id']; ?>" class="single-location">
 					
+					<a href="single.php?id=<?php echo $location['id']; ?>" itemprop="name"><strong class="distance"></strong> <?php echo $location['name']; ?></a>
+						
+						<meta itemprop="address" content="<?php echo $location['street_address']; ?>">
+
 					<span itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
 						<meta itemprop="latitude" content="<?php echo $location['latitude']; ?>">
 						<meta itemprop="longitude" content="<?php echo $location['longitude']; ?>">
 					</span>
-					
-					<meter value="<?php echo $rating; ?>" min="0" max="5"><?php echo $rating; ?> out of 5</meter>
+						
 					<ol class="rater">
-					<?php for ($i = 1; $i <= 5; $i++) : ?>
+					
+						<?php for ($i = 1; $i <= 5; $i++) : ?>
 						<?php $class = ($i <= $rating) ? 'is-rated' : ''; ?>
-						<li class="rater-level <?php echo $class; ?>">❤</li>
+						
+							<li class="rater-level <?php echo $class; ?>">❤</li>
+							
 						<?php endfor; ?>
+						
 					</ol>
 				</li>
+				
 				<?php endforeach; ?>
+				
 				</ol>
-		
-		<div id="map"></div>
-		
-	</article>
+				
+			</div>
+		</div>
+	</section>
 
 <?php require_once 'includes/footer.php'; ?>
