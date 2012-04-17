@@ -6,6 +6,7 @@ require_once '../includes/users.php';
 if (user_is_signed_in()) {
 	header('Location: index.php');
 	exit;
+}
 
 $errors = array();
 $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
