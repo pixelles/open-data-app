@@ -21,23 +21,26 @@ $(document).ready(function () {
 	$('.locations li').each(function (i, elem) {
 		var location = $(this).find('a').html();
 
+		var street_address =$(this).find('meta[itemprop="address"]').attr('content');
 		// Create some HTML content for the info window
 		// Style the content in your CSS
 		var info = '<div class="info-window">'
-			+ '<strong>' + location + '</strong>'
-			+ <a href="single.php?id=' + $(this).attr('data-id') + '">Rate this location</a>
+			+ '<p><strong>' + location + '</strong></p>'
+			+ '<p>' + street_address + '</p>'
+			+ '<p><a href="single.php?id=' + $(this).attr('data-id') + '">Rate this location</a></p>'
 			+ '</div>'
 		;
 
 		// Determine this dino's latitude and longitude
 		var latitude = parseFloat($(this).find('meta[itemprop="latitude"]').attr('content'));
 		var longitude = parseFloat($(this).find('meta[itemprop="longitude"]').attr('content'));
-		var pos = new google.maps.LatLng(latitude, longitude);
+		
+		var pos = new google.maps.LatLng(latitude, longitude, street_address);
 
 		locations.push({
 			id : $(this).attr('data-id')
-			, lat : lat
-			, lng : lng
+			, lat : latitude
+			, lng : longitude
 		});
 
 		// Create a marker object for this dinosaur
@@ -46,7 +49,7 @@ $(document).ready(function () {
 			, map : map
 			, title : location
 			, icon : 'images/marker.png'
-			, animation: google.maps.Animation.DROP
+			//, animation: google.maps.Animation.DROP
 		});
 
 		// A function for showing this dinosaur's info window
@@ -101,7 +104,7 @@ $(document).ready(function () {
 	//  and display the list of closest locations
 	function displayUserLoc (latitude, longitude) {
 		var locDistances = []
-			, totalLocs = location.length
+			, totalLocs = locations.length
 			, userLoc = new google.maps.LatLng(latitude, longitude);
 		;
 
@@ -129,7 +132,7 @@ $(document).ready(function () {
 		for (var i = 0; i < totalLocs; i++) {
 			locDistances.push({
 				id : locations[i].id
-				, distance : parseFloat(current.distanceTo(new LatLon(locations[i].latitude, locations[i].longitude)))
+				, distance : parseFloat(current.distanceTo(new LatLon(locations[i].lat, locations[i].lng)))
 			});
 		}
 
@@ -157,7 +160,7 @@ $(document).ready(function () {
 	// Check if the browser supports geolocation
 	// It would be best to hide the geolocation button if the browser doesn't support it
 	if (navigator.geolocation) {
-		$('#geo').click(function () {
+		$('#geo-button').click(function () {
 			// Request access for the current position and wait for the user to grant it
 			navigator.geolocation.getCurrentPosition(function (pos) {
 				displayUserLoc(pos.coords.latitude, pos.coords.longitude);
@@ -177,7 +180,7 @@ $(document).ready(function () {
 			, region : 'CA'
 		}, function (results, status) {
 				if (status == google.maps.GeocoderStatus.OK) {
-					displayUserLoc(results[0].geometry.location.latitude(), results[0].geometry.location.longitude());
+					displayUserLoc(results[0].geometry.location.lat(), results[0].geometry.location.lng());
 				}
 			}
 		);
