@@ -27,6 +27,8 @@ if (empty($results)) {
 	exit;
 }
 
+$title = $results['name'];
+
 if ($results['rate_count'] > 0) {
 $rating = round($results['rate_total'] / $results['rate_count']);
 } else {
