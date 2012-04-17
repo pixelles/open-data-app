@@ -9,7 +9,7 @@ if (!user_is_signed_in()) {
 }
 
 $results = $db->query('
-	SELECT id, name, street_address, longitude, latitude
+	SELECT id, name, street_address, longitude, latitude, rate_total
 	FROM locations
 	ORDER BY street_address DESC
 ');

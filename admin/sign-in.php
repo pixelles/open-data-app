@@ -41,11 +41,11 @@ require_once '../includes/admin-header.php';
 ?>
 <form method="post" action="sign-in.php">
 	<div>
-    	<label for="email">E-mail Address<?php if (isset($errors['email'])) : ?> <strong>is required</strong><?php endif; ?><?php if (isset($errors['user-non-existent'])) : ?> <strong>This user does not exist</strong><?php endif; ?></label>
+    	<label for="email">E-mail Address <?php if (isset($errors['email'])) : ?> <strong>is required</strong><?php endif; ?><?php if (isset($errors['user-non-existent'])) : ?> <strong>This user does not exist</strong><?php endif; ?></label>
         <input type="email" id="email" name="email" required>
 	</div>
 	<div>
-		<label for="password">Password<?php if (isset($errors['password'])) : ?> <strong>is required</strong><?php endif; ?><?php if (isset($errors['password-no-match'])) : ?> <strong>Passwords don't match</strong><?php endif; ?></label>
+		<label for="password">Password <?php if (isset($errors['password'])) : ?> <strong>is required</strong><?php endif; ?><?php if (isset($errors['password-no-match'])) : ?> <strong>Passwords don't match</strong><?php endif; ?></label>
 		<input type="password" id="password" name="password" required>
 	</div>
 	<button type="submit">Sign In</button>
