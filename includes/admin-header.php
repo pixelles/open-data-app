@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-<title><?php if (isset($title)) { echo $title . ' · '; } ?>Ottawa's Splendid Splash Pad Locator</title>
+	<title><?php if (isset($title)) { echo $title . ' · '; } ?>Ottawa's Splendid Splash Pad Locator</title>
 </head>
 <body>
 	<header>	
