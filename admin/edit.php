@@ -68,9 +68,6 @@ $latitude = $results['latitude'];
 require_once '../includes/admin-header.php';
 
 ?>
-
-<article>
-
 <h2>Edit <?php echo $name; ?></h2>
 <div class="delete">
 <form method="post" action="edit.php?id=<?php echo $id; ?>">
@@ -96,7 +93,5 @@ require_once '../includes/admin-header.php';
 
 
     <div class="back"> <a href="index.php">Back</a> </div>
-	
-</article>
 	
 <?php require_once '../includes/admin-footer.php'; ?>

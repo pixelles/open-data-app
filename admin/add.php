@@ -41,7 +41,6 @@ exit;
 require_once '../includes/admin-header.php';
 
 ?>
-<article>
 <h2>Add a Location</h2>
 <div class="delete">
 <form method="post" action="add.php">
@@ -64,7 +63,6 @@ require_once '../includes/admin-header.php';
 <button type="submit">Add</button>
 </form>
 </div>
-</article>
 
     <div class="back"> <a href="index.php">Back</a> </div>
 
