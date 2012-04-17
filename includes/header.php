@@ -9,13 +9,15 @@
 <body>
 
 	<header>	
-		<h1>Welcome to Ottawa's Splendid Splash Pad Locator</h1>
+		<h1>Ottawa's Splendid Splash Pad Locator</h1>
 		<nav>
 			<h2>Navigation</h2>
 			<ul>
-				<li><a href="index.php">Home</a></li>
-				<li><a href="admin/index.php">Administration</a></li>
+				<li><a href="index.php">Home</a></li> &middot; 
+				<li><a href="admin/index.php">Administration</a></li> &middot; 
 				<li><a href="http://imm.edumedia.ca/dupe0012/open-data-app">Project Brief</a>
 			</ul>
 		</nav>
 	</header>
+	
+	<article>
