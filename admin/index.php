@@ -3,10 +3,10 @@
 require_once '../includes/db.php';
 require_once '../includes/users.php';
 
-/*if (!user_is_signed_in()) {
+if (!user_is_signed_in()) {
 	header('Location: sign-in.php');
 	exit;
-}*/
+}
 
 $results = $db->query('
 	SELECT id, name, street_address, longitude, latitude
@@ -17,8 +17,6 @@ $results = $db->query('
 require_once '../includes/admin-header.php';
 
 ?>
-	
-	<article>
 		<h2>Add a New Data Entry</h2>
 		<p>Add a new location (data entry) to your database.</p>
 		<ul>
@@ -35,6 +33,5 @@ require_once '../includes/admin-header.php';
 				&middot; <a href="delete.php?id=<?php echo $location['id']; ?>">Delete</a>
 			<?php endforeach; ?>
 		</ul>
-	</article>
-	
+
 <?php require_once '../includes/admin-footer.php'; ?>

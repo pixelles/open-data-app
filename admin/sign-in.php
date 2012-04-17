@@ -3,11 +3,6 @@
 require_once '../includes/db.php';
 require_once '../includes/users.php';
 
-//if (user_is_signed_in()) {
-//	header('Location: index.php');
-//	exit;
-//}
-
 $errors = array();
 $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 $password = filter_input(INPUT_POST, 'password', FILTER_UNSAFE_RAW);
@@ -44,7 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 require_once '../includes/admin-header.php';
 
 ?>
-<article>
 <form method="post" action="sign-in.php">
 	<div>
     	<label for="email">E-mail Address<?php if (isset($errors['email'])) : ?> <strong>is required</strong><?php endif; ?><?php if (isset($errors['user-non-existent'])) : ?> <strong>This user does not exist</strong><?php endif; ?></label>
@@ -56,6 +50,5 @@ require_once '../includes/admin-header.php';
 	</div>
 	<button type="submit">Sign In</button>
 </form>
-</article>
 
 <?php require_once '../includes/admin-footer.php'; ?>
