@@ -1,0 +1,284 @@
+/* General */
+html,
+body, 
+header,
+nav,
+footer,
+article, 
+section, 
+div,
+form, 
+input,
+label,
+ul,
+li,
+article section ul,
+article section ul li a,
+article section ul li p {
+	margin: 0;
+	padding: 0;
+
+	font-family: "Trebuchet MS", "Franklin Gothic Medium", Calibri, Arial, Helvetica, sans-serif;
+}
+
+html {
+	margin: 0 auto;
+	
+	background-color: #2f9a57;
+}
+
+article {
+	margin: 0 auto;
+	
+	width: 970px;
+}
+
+img {
+	border: none;
+}
+
+
+/* Headings */
+h1, h2 {
+	margin: 0 auto;
+	padding: 0;	
+	
+	text-transform: uppercase;
+}
+
+h1 {
+	width: 100%;
+	height: 213px;
+	
+	background: url('../images/admin-header.jpg') no-repeat top center #18405f;
+	
+	text-indent: -999999px;
+}
+
+h2 {
+	color: #10632f;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+
+/* Navigations */
+header {
+		text-align: center;
+}
+
+header h2 {
+	color: #2f9a57;
+	font-size: 1em;
+}
+
+article section h2 {
+	margin-top: -40px;
+}
+
+article section:first-child {
+	margin-top: 40px;
+}
+
+article section:last-child {
+	margin-top: 60px;
+}
+
+header nav {
+	position: absolute;
+	top: 0;
+	left: 3%;
+	
+	z-index: 5000;
+	
+	width: 230px;
+	
+	background-color: #10632f;
+	
+	border: 8px solid #10632f;
+	
+	-webkit-border-radius: 0px 0px 15px 15px;
+	-moz-border-radius: 0px 0px 15px 15px;
+	-o-border-radius: 0px 0px 15px 15px;
+	-ms-border-radius: 0px 0px 15px 15px;
+	border-radius: 0px 0px 15px 15px;
+}
+
+header nav a,
+header nav a:link,
+header nav a:visited,
+header nav a:hover,
+header nav a:focus,
+header nav a:active {
+	color: #7ad09a;	
+	text-decoration: none;
+}
+
+header nav a:hover,
+header nav a:focus,
+header nav a:active {
+	color: #fff;	
+}
+
+header nav ul {
+	margin: 0;
+	padding: 0;
+	
+	list-style-type: none;
+	
+	color: #7ad09a;	
+	font-size: 0.6em;
+}
+
+header nav ul li {
+	display: inline-block;
+}
+
+
+/* Sections */
+article section {
+	background-color: #10632f;
+	
+	border: 8px solid #10632f;
+	
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-o-border-radius: 15px;
+	-ms-border-radius: 15px;
+	border-radius: 15px;
+}
+
+.section-description {
+	margin-left: 5px;
+	
+	color: #2f9a57;
+	font-size: 0.8em;
+}
+
+article section ul {
+	margin: 0 auto;
+	
+	list-style-type: none;
+}
+
+article section ul li,
+article section ul li a,
+article section ul li p {
+	display: inline-block;
+	vertical-align: top;
+	
+	color: #2f9a57;
+}
+
+article section:last-child ul li {
+	margin-top: 5px;
+}
+	
+article section:last-child ul li,
+article section ul li {
+	
+	overflow: hidden;
+	
+	height: 28px;
+	
+	background-color: #0a5726; 
+
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-o-border-radius: 10px;
+	-ms-border-radius: 10px;
+	border-radius: 10px;
+	
+	border: 5px solid #0a5726;
+	border-right: 9px solid #0a5726;
+	border-left: 9px solid #0a5726;
+	
+	line-height: 25px;
+}
+
+article section ul li a,
+article section ul li a:link,
+article section ul li a:visited {
+	color: #98d6a2;
+	font-size: 1.1em;
+	font-weight: bold;
+		
+	text-decoration: none;
+}
+
+article section ul li a:hover,
+article section ul li a:focus,
+article section ul li a:active {
+	color: #fff;
+	font-size: 1.1em;
+	font-weight: bold;
+	
+	text-decoration: none;
+}
+
+article section ul li:hover,
+article section ul li:focus,
+article section ul li:active {
+	background-color: #147136;
+	
+	border-color: #147136;
+}
+
+article section ul li:before {
+	content: ' ❤ ';
+	font-size: 1.2em;
+}
+
+article section ul li p:first-child {
+	width: 305px;
+}
+
+article section ul li p:last-child {
+	width: 120px;
+	
+	text-align: right;
+}
+
+article section:first-child ul li {
+	width: 930px;
+}
+
+.edit-delete a,
+.edit-delete a:link,
+.edit-delete a:visited {
+	color: #042b13;
+	font-size: 0.6em;
+	text-decoration: none;
+
+	text-transform: uppercase;
+}
+
+.edit-delete a:hover,
+.edit-delete a:active,
+.edit-delete a:focus {
+	color: #021b0b;
+	font-size: 0.6em;
+	text-decoration: underline;
+	text-transform: uppercase;
+}
+
+.edit-delete {
+	color: #042b13;
+}
+
+
+/* Footer */
+footer {
+	margin: 0 auto;
+	margin-top: 40px;
+	
+	width: 100%;
+	height: 30px;
+
+	background-color: #10632f;
+	
+	color: #38a65a;
+	font-size: 0.7em;
+	text-align: center;
+	line-height: 30px;
+}
