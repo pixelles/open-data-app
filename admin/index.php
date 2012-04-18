@@ -11,27 +11,32 @@ if (!user_is_signed_in()) {
 $results = $db->query('
 	SELECT id, name, street_address, longitude, latitude, rate_total
 	FROM locations
-	ORDER BY street_address DESC
+	ORDER BY name ASC
 ');
 
 require_once '../includes/admin-header.php';
 
 ?>
-		<h2>Add a New Data Entry</h2>
-		<p>Add a new location (data entry) to your database.</p>
+	<section>
+		<h2>Add a New Splash Pad</h2>
+		<p class="section-description">Add a new splash pad to your existing list.</p>
 		<ul>
-			<li><a href="add.php">Add a data entry</a></p></li>
+			<li><a href="add.php">Add a Splash Pad</a></li>
 		</ul>
-		
-		<h2>Edit / Delete Data Entries</h2>
-		<p>Manage your application's data entries using the management system below.</p>
+	</section>
+	
+	<section>
+		<h2>Manage Splash Pads</h2>
+		<p class="section-description">Choose to edit or delete existing splash pads.</p>
 		
 		<ul>
 			<?php foreach ($results as $location) : ?>
-				<li><a href="../single.php?id=<?php echo $location['id']; ?>"><?php echo $location['name']; ?></a></li>
-				&middot; <a href="edit.php?id=<?php echo $location['id']; ?>">Edit</a>
-				&middot; <a href="delete.php?id=<?php echo $location['id']; ?>">Delete</a>
+				<li>
+					<p><a href="../single.php?id=<?php echo $location['id']; ?>"><?php echo $location['name']; ?></a></p>
+					<p class="edit-delete"><a href="edit.php?id=<?php echo $location['id']; ?>">Edit</a> &middot; <a href="delete.php?id=<?php echo $location['id']; ?>">Delete</a></p>
+				</li>
 			<?php endforeach; ?>
 		</ul>
+	</section>
 
 <?php require_once '../includes/admin-footer.php'; ?>
