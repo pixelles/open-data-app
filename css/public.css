@@ -21,6 +21,10 @@ label,
 	font-family: "Trebuchet MS", "Franklin Gothic Medium", Calibri, Arial, Helvetica, sans-serif;
 }
 
+html, body {
+	overflow-x: hidden;	
+}
+
 html {
 	margin: 0 auto;
 	
@@ -48,6 +52,12 @@ section, form, button, input, label {
 	-o-border-radius: 15px;
 	-ms-border-radius: 15px;
 	border-radius: 15px;
+}
+
+meter {
+	position: absolute;
+	top: -999em;
+	-webkit-appearance: none;
 }
 
 
@@ -164,12 +174,6 @@ h2 {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-}
-
-meter {
-	position: absolute;
-	top: -999em;
-	-webkit-appearance: none;
 }
 
 #adr:hover,
