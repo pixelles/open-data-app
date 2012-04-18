@@ -22,10 +22,10 @@ $sql->execute();
 
 $results = $sql->fetch();
 
-if (empty($results)) {
-	header('Location: index.php');
-	exit;
-}
+//if (empty($results)) {
+//	header('Location: index.php');
+//	exit;
+//}
 
 $title = $results['name'];
 
