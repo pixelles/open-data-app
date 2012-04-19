@@ -15,6 +15,7 @@
 			<ul>
 				<li><a href="index.php">Home</a></li> &middot; 
 				<li><a href="admin/index.php">Administration</a></li> &middot; 
+				<li><a href="sign-out.php">Sign Out</a></li> &middot; 
 				<li><a href="http://imm.edumedia.ca/dupe0012/open-data-app">Project Brief</a>
 			</ul>
 		</nav>

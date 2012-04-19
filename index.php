@@ -54,13 +54,16 @@ require_once 'includes/header.php';
 					
 					<a href="single.php?id=<?php echo $location['id']; ?>" itemprop="name"><strong class="distance"></strong> <?php echo $location['name']; ?></a>
 						
-						<meta itemprop="address" content="<?php echo $location['street_address']; ?>">
-
+					<meta itemprop="address" content="<?php echo $location['street_address']; ?>">
+					
 					<span itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
 						<meta itemprop="latitude" content="<?php echo $location['latitude']; ?>">
 						<meta itemprop="longitude" content="<?php echo $location['longitude']; ?>">
 					</span>
-						
+					
+					<meta itemprop="ratingCount" itemscope itemtype="http://schema.org/AggregateRating" content="<?php echo $location['rate_count']; ?>">
+					<meta itemprop="ratingValue" itemscope itemtype="http://schema.org/AggregateRating" content="<?php echo $location['rate_total']; ?>">
+			
 					<ol class="rater">
 					
 						<?php for ($i = 1; $i <= 5; $i++) : ?>

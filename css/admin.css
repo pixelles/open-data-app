@@ -15,7 +15,8 @@ li,
 button, 
 article section ul,
 article section ul li a,
-article section ul li p {
+article section ul li p,
+.form-section {
 	margin: 0;
 	padding: 0;
 
@@ -183,7 +184,6 @@ article section:last-child ul li {
 	
 article section:last-child ul li,
 article section ul li {
-	
 	overflow: hidden;
 	
 	height: 28px;
@@ -273,8 +273,10 @@ article section:first-child ul li {
 	color: #042b13;
 }
 
-.sign-in {
+.form-section {
 	margin: 0 auto;
+	
+	display: block;
 	
 	width: 320px;
 }
@@ -323,7 +325,7 @@ input {
 	appearance: none;
 }
 
-.sign-in button {
+.form-section button {
 	height: 30px;
 	
 	background-color: #10632f;
@@ -336,9 +338,9 @@ input {
 	text-transform: uppercase;
 }
 
-.sign-in button:hover,
-.sign-in button:active,
-.sign-in button:focus {
+.form-section button:hover,
+.form-section button:active,
+.form-section button:focus {
 	color: #fff;
 }
 

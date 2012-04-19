@@ -14,14 +14,15 @@ label,
 #adr,
 #geo,
 .locations,
-.single-location {
+.single-location,
+.single-section {
 	margin: 0;
 	padding: 0;
 
 	font-family: "Trebuchet MS", "Franklin Gothic Medium", Calibri, Arial, Helvetica, sans-serif;
 }
 
-html, body {
+html{
 	overflow-x: hidden;	
 }
 
@@ -60,6 +61,10 @@ meter {
 	-webkit-appearance: none;
 }
 
+img {
+	border: none;
+}
+
 
 /* Navigations */
 header {
@@ -74,11 +79,11 @@ header h2 {
 header nav {
 	position: absolute;
 	top: 0;
-	left: 6%;
+	left: 3%;
 	
 	z-index: 5000;
 	
-	width: 200px;
+	width: 230px;
 	
 	background-color: #10632f;
 	
@@ -123,7 +128,7 @@ header nav ul li {
 
 
 /* Headings */
-h1, h2 {
+h1, h2, h3 {
 	margin: 0 auto;
 	padding: 0;	
 	
@@ -143,6 +148,12 @@ h2 {
 	color: #10632f;
 	font-size: 1.5em;
 	font-weight: bold;
+}
+
+h3 {
+	margin-left: 20px;
+	
+	color: #2f9a57;
 }
 	
 	
@@ -252,10 +263,25 @@ label {
 	text-decoration: none;
 }
 
-.info-window a:before,
-.info-window a:after {
-	content: ' ❤ ';
+.info-window a:before {
+	content: "▶ ";
 }
+
+.info-window em {
+	color: #aaaaaa;	
+	font-style: normal;
+}
+
+.info-rating  {
+	border-top: 1px dotted #ccc;
+	color: #858585;
+	text-align: right;
+}
+
+.info-street-address {
+	color: #2f9a57;
+}
+
 
 /* Splash Pad Locations */
 .splash-pad-locations {
@@ -311,7 +337,7 @@ label {
 	padding: 0;
 		
 	width: 285px;
-	height: 31px;
+	height: 28px;
 	
 	display: block;
 	
@@ -395,6 +421,30 @@ label {
 .is-rated-hover a:link,
 .is-rated-hover a:visited {
 	color: #38a360;
+}
+
+/* Single Page */
+.single-section {
+	margin: 0 auto;
+	margin-top: 40px;
+	
+	display: block;
+	
+	width: 320px;
+	
+	background-color: #10632f;
+	
+	border: 8px solid #10632f;
+	
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-o-border-radius: 15px;
+	-ms-border-radius: 15px;
+	border-radius: 15px;
+}
+
+.single-section h2 {
+	margin-top: -40px;
 }
 
 /* Footer */

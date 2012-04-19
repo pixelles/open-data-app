@@ -41,29 +41,30 @@ exit;
 require_once '../includes/admin-header.php';
 
 ?>
-<h2>Add a Location</h2>
-<div class="delete">
-<form method="post" action="add.php">
-<div>
-<label for="name">Location Name<?php if (isset($errors['name'])) : ?> <strong>is required</strong><?php endif; ?></label>
-<input id="name" name="name" value="<?php echo $name; ?>" required>
-</div>
-<div>
-<label for="street_address">Street Address<?php if (isset($errors['street_address'])) : ?> <strong>is required</strong><?php endif; ?></label>
-<input id="street_address" name="street_address" value="<?php echo $street_address; ?>" required>
-</div>
-<div>
-<label for="longitude">Longitude<?php if (isset($errors['longitude'])) : ?> <strong>is required</strong><?php endif; ?></label>
-<input id="longitude" name="longitude" value="<?php echo $longitude; ?>" required>
-</div>
-<div>
-<label for="latitude">Latitude<?php if (isset($errors['latitude'])) : ?> <strong>is required</strong><?php endif; ?></label>
-<input id="latitude" name="latitude" value="<?php echo $latitude; ?>" required>
-</div>
-<button type="submit">Add</button>
-</form>
-</div>
+<section class="form-section">
+	<h2>Add a Location</h2>
+		<p class="section-description">Add a new splash pad to your existing list using the form below:</p>
+	
+	<form method="post" action="add.php">
+	<div>
+		<label for="name">Location Name<?php if (isset($errors['name'])) : ?> <strong>is required</strong><?php endif; ?></label>
+		<input id="name" name="name" value="<?php echo $name; ?>" required>
+	</div>
+	<div>
+		<label for="street_address">Street Address<?php if (isset($errors['street_address'])) : ?> <strong>is required</strong><?php endif; ?></label>
+		<input id="street_address" name="street_address" value="<?php echo $street_address; ?>" required>
+	</div>
+	<div>
+		<label for="longitude">Longitude<?php if (isset($errors['longitude'])) : ?> <strong>is required</strong><?php endif; ?></label>
+		<input id="longitude" name="longitude" value="<?php echo $longitude; ?>" required>
+	</div>
+	<div>
+		<label for="latitude">Latitude<?php if (isset($errors['latitude'])) : ?> <strong>is required</strong><?php endif; ?></label>
+		<input id="latitude" name="latitude" value="<?php echo $latitude; ?>" required>
+	</div>
+	<button type="submit">Add</button>
+	</form>
 
-    <div class="back"> <a href="index.php">Back</a> </div>
+</section>
 
 <?php require_once '../includes/admin-footer.php'; ?>

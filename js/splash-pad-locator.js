@@ -22,12 +22,15 @@ $(document).ready(function () {
 		var location = $(this).find('a').html();
 
 		var street_address =$(this).find('meta[itemprop="address"]').attr('content');
+		var rating_count =$(this).find('meta[itemprop="ratingCount"]').attr('content');
+		var rating_total =$(this).find('meta[itemprop="ratingValue"]').attr('content');
 		// Create some HTML content for the info window
 		// Style the content in your CSS
 		var info = '<div class="info-window">'
 			+ '<p><strong>' + location + '</strong></p>'
-			+ '<p>' + street_address + '</p>'
-			+ '<p><a href="single.php?id=' + $(this).attr('data-id') + '">Rate this location</a></p>'
+			+ '<p class="info-street-address">' + street_address + '</p>'
+			+ '<p class="info-rating"><strong>Rated</strong> ' + rating_total + ' out of 5 <em>(based on ' + rating_count + ' rating(s))</em></p>'
+			+ '<p class="info-rating"><a href="single.php?id=' + $(this).attr('data-id') + '">Rate this location</a></p>'
 			+ '</div>'
 		;
 

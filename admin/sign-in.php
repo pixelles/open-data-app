@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 require_once '../includes/admin-header.php';
 
 ?>
-<section class="sign-in">
+<section class="form-section">
 		<h2>Sign in</h2>
 		<p class="section-description">You need to sign in to view the administration page.</p>
 
