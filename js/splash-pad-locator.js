@@ -19,7 +19,7 @@ $(document).ready(function () {
 
 	// Loop through all the places and add a marker to the GMap
 	$('.locations li').each(function (i, elem) {
-		var location = $(this).find('a').html();
+		var location = $(this).find('a').text();
 
 		var street_address =$(this).find('meta[itemprop="address"]').attr('content');
 		var rating_count =$(this).find('meta[itemprop="ratingCount"]').attr('content');
@@ -122,6 +122,7 @@ $(document).ready(function () {
 				, title : 'You are here.'
 				, icon : 'images/user.png'
 				, animation: google.maps.Animation.DROP
+				, zIndex : 5000
 			});
 		}
 
@@ -158,6 +159,9 @@ $(document).ready(function () {
 
 			$locationList.append($li);
 		}
+		
+		$('.locations > li').removeClass('visible');
+		$('.locations > li').slice(0,4).addClass('visible');
 	}
 
 	// Check if the browser supports geolocation
