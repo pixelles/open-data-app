@@ -10,6 +10,10 @@
 
 	<header>	
 		<h1>Ottawa's Splendid Splash Pad Locator</h1>
+		<?php
+			require 'users.php';
+			if (user_is_signed_in()) :
+		?>
 		<nav>
 			<h2>Navigation</h2>
 			<ul>
@@ -19,6 +23,7 @@
 				<li><a href="http://imm.edumedia.ca/dupe0012/open-data-app">Project Brief</a>
 			</ul>
 		</nav>
+		<?php endif; ?>
 	</header>
 	
 	<article>
