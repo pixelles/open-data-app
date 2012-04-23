@@ -12,14 +12,14 @@ require_once 'includes/header.php';
 
 ?>
 
-<section>
+<section class="map-wrapper">
 
 	<h2>Locator</h2>
 	<div id="map"></div>
 	
 </section>
 
-<section>
+<section class="loc-wrapper">
 
 	<h2 class="margin-h2">Splash Pads</h2>
 	<div class="splash-pad-locations">
@@ -40,7 +40,7 @@ require_once 'includes/header.php';
 
 			<ol class="locations">
 			
-				<?php foreach ($results as $location) : ?>
+				<?php $count = 0; foreach ($results as $location) : ?>
 				
 				<?php
 					if ($location['rate_count'] > 0) {
@@ -50,7 +50,7 @@ require_once 'includes/header.php';
 					}
 				?>
 				
-				<li itemscope itemtype="http://schema.org/TouristAttraction" data-id="<?php echo $location['id']; ?>" class="single-location">
+				<li itemscope itemtype="http://schema.org/TouristAttraction" data-id="<?php echo $location['id']; ?>" class="<?php if ($count < 5) { echo 'visible'; } ?> single-location">
 					
 					<a href="single.php?id=<?php echo $location['id']; ?>" itemprop="name"><strong class="distance"></strong> <?php echo $location['name']; ?></a>
 						
@@ -76,7 +76,7 @@ require_once 'includes/header.php';
 					</ol>
 				</li>
 				
-				<?php endforeach; ?>
+				<?php $count++; endforeach; ?>
 				
 				</ol>
 				
