@@ -1,4 +1,15 @@
-<!DOCTYPE HTML>
+<?php
+/**
+* Description: a file containing all the repetitive layout codes for the top half of a page.
+*
+* @package com.trishajessica.splashpadlocator
+* @copyright 2012 Trisha Jessica
+* @author Trisha Jessica <hello@trishajessica.ca>
+* @link <http://www.pixelles.github.com/open-data-app>
+* @license New BSD License <https://github.com/pixelles/open-data-app/blob/master/LICENSE.txt>
+* @version <https://github.com/pixelles/open-data-app/blob/master/VERSION.txt>
+*/
+?><!DOCTYPE HTML>
 <html lang=en-ca>
 <head>
 	<meta charset=utf-8>

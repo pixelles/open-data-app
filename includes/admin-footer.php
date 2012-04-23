@@ -1,4 +1,15 @@
-	</article>
+<?php
+/**
+* Description: a file containing all the repetitive layout codes for the bottom half of a page. This file is specifically for the Administration-related pages.
+*
+* @package com.trishajessica.splashpadlocator
+* @copyright 2012 Trisha Jessica
+* @author Trisha Jessica <hello@trishajessica.ca>
+* @link <http://www.pixelles.github.com/open-data-app>
+* @license New BSD License <https://github.com/pixelles/open-data-app/blob/master/LICENSE.txt>
+* @version <https://github.com/pixelles/open-data-app/blob/master/VERSION.txt>
+*/
+?>	</article>
 	
 	<footer>
 		<p>

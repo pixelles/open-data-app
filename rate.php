@@ -1,4 +1,14 @@
 <?php
+/**
+* Description: a file not seen by the user that process the user's inputted rating and pushes the information to the database.
+*
+* @package com.trishajessica.splashpadlocator
+* @copyright 2012 Trisha Jessica
+* @author Trisha Jessica <hello@trishajessica.ca>
+* @link <http://www.pixelles.github.com/open-data-app>
+* @license New BSD License <https://github.com/pixelles/open-data-app/blob/master/LICENSE.txt>
+* @version <https://github.com/pixelles/open-data-app/blob/master/VERSION.txt>
+*/
 
 require_once 'includes/db.php';
 require_once 'includes/functions.php';
