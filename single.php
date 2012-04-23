@@ -37,7 +37,7 @@ $rating = 0;
 
 $cookie = get_rate_cookie();
 
-require_once '/includes/header.php';
+require_once 'includes/header.php';
 
 ?>
 <section class="single-section">
