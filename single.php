@@ -87,4 +87,5 @@ require_once 'includes/header.php';
     <div class="back"> <a href="index.php">Back</a> </div>
 	
 </section>
+
 <?php require_once '/includes/footer.php'; ?>
