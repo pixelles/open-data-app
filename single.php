@@ -44,7 +44,7 @@ require_once 'includes/header.php';
 		<h2><?php echo $results['name']; ?></h2>
 		 <ul>
 		 	<li><strong>Average Rating:</strong> 		
-				<ol class="rater">
+				<ol class="rater single-page-rater">
 					<?php for ($i = 1; $i <= 5; $i++) : ?>
 					<?php $class = ($i <= $rating) ? 'is-rated' : ''; ?>
 						
@@ -53,11 +53,11 @@ require_once 'includes/header.php';
 					<?php endfor; ?>
 				</ol>
 				
-			<li><strong>Street Address:</strong> <?php echo $results['street_address']; ?></p></li>
+			<li class="single-section-details"><strong>Street Address:</strong> <?php echo $results['street_address']; ?></p></li>
 			
-			<li><strong>Longitude:</strong> <?php echo $results['longitude']; ?></p></li>
+			<li class="single-section-details"><strong>Longitude:</strong> <?php echo $results['longitude']; ?></p></li>
 			
-			<li><strong>Latitude:</strong> <?php echo $results['latitude']; ?></p></li>
+			<li class="single-section-details"><strong>Latitude:</strong> <?php echo $results['latitude']; ?></p></li>
 		</ul>
 	</section>
 	
@@ -65,7 +65,7 @@ require_once 'includes/header.php';
 		
 		<?php if (isset($cookie[$id])) : ?>
 
-		<h2>Your rating</h2>
+		<h2 class="rate-pointer">Your rating</h2>
 			<ol class="rater rater-usable">
 			<?php for ($i = 1; $i <= 5; $i++) : ?>
 			<?php $class = ($i <= $cookie[$id]) ? 'is-rated' : ''; ?>
@@ -75,7 +75,7 @@ require_once 'includes/header.php';
 		
 		<?php else : ?>
 		
-		<h2>Rate</h2>
+		<h2 class="rate-pointer">Rate</h2>
 			<ol class="rater rater-usable">
 				<?php for ($i = 1; $i <= 5; $i++) : ?>
 			<li class="rater-level"><a href="rate.php?id=<?php echo $results['id']; ?>&rate=<?php echo $i; ?>">❤</a></li>

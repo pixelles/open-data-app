@@ -336,7 +336,6 @@ label {
 }
 
 .single-location {
-	margin-top: 11px;
 	margin-left: 10px;
 
 	width: 382px;
@@ -365,6 +364,7 @@ label {
 
 .locations li.visible {
 	display: block;
+	margin-top: 3px;
 }
 
 .locations a,
@@ -483,6 +483,9 @@ label {
 
 .single-section h2 {
 	margin-top: -40px;
+	display: block;
+	
+	width: 100%;
 }
 
 .single-section ul {
@@ -492,12 +495,29 @@ label {
 	list-style-type: none;
 }
 
+.single-section-details {
+	margin-top: -4px;
+	color: #2f9a57;
+	text-align: right;
+}
+
 .single-section ul li strong {
 	display: block;
+	
+	padding-bottom: 3px;
+	
+	border-bottom: 3px solid #156d36;
+	
 	color: #042b13;
+	font-size: 1.2em;
 	font-weight: bold;
 
 	text-transform: uppercase;
+	text-align: left;
+}
+
+.single-section ul > li:nth-child(2) {
+	padding-top: 15px;
 }
 
 .single-section-transparent {
@@ -518,6 +538,43 @@ label {
 	-ms-border-radius: 15px;
 	border-radius: 15px;
 }
+
+.single-page-rater {
+	margin-top: -26px;
+	border-bottom: 2px solid #156d36;
+}
+
+.rate-pointer {
+	position: absolute;
+	margin-top: -23px;
+}
+
+.rate-pointer:after {
+	content: " ▶";
+}
+
+.back a,
+.back a:link,
+.back a:visited {
+	margin-left: -90px;
+	
+	color: #042b13;
+	font-size: 1.2em;
+	font-weight: bold;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.back a:hover,
+.back a:focus,
+.back a:active {
+	text-decoration: underline;
+}
+
+.back a:before {
+	content: "◀ ";
+}
+
 
 /* Footer */
 footer {
