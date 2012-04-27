@@ -43,14 +43,17 @@ require_once 'includes/header.php';
 <section class="single-section">
 		<h2><?php echo $results['name']; ?></h2>
 		 <ul>
-		 	<li><strong>Average Rating:</strong> 		
+		 	<li><strong>Average Rating:</strong> 	
+
 				<ol class="rater single-page-rater">
+				
 					<?php for ($i = 1; $i <= 5; $i++) : ?>
 					<?php $class = ($i <= $rating) ? 'is-rated' : ''; ?>
 						
 						<li class="rater-level <?php echo $class; ?>">❤</li>
-							
+						
 					<?php endfor; ?>
+										
 				</ol>
 				
 			<li class="single-section-details"><strong>Street Address:</strong> <?php echo $results['street_address']; ?></p></li>
@@ -75,7 +78,7 @@ require_once 'includes/header.php';
 		
 		<?php else : ?>
 		
-		<h2 class="rate-pointer">Rate</h2>
+		<h2 class="rate-pointer">Rate This Pad</h2>
 			<ol class="rater rater-usable">
 				<?php for ($i = 1; $i <= 5; $i++) : ?>
 			<li class="rater-level"><a href="rate.php?id=<?php echo $results['id']; ?>&rate=<?php echo $i; ?>">❤</a></li>

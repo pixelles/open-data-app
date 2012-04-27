@@ -422,6 +422,11 @@ label {
 	color: #042b13;
 }
 
+.rater-level a {
+	color: #042b13;
+	text-decoration: none;
+}
+
 .rater li:first-child {
 	padding-left: 4px;
 	
@@ -497,7 +502,9 @@ label {
 
 .single-section-details {
 	margin-top: -4px;
+	
 	color: #2f9a57;
+	font-size: 0.8em;
 	text-align: right;
 }
 
