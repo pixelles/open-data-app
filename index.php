@@ -59,7 +59,7 @@ require_once 'includes/header.php';
 					}
 				?>
 				
-				<li itemscope itemtype="http://schema.org/TouristAttraction" data-id="<?php echo $location['id']; ?>" class="<?php if ($count < 5) { echo 'visible'; } ?> single-location">
+				<li itemscope itemtype="http://schema.org/TouristAttraction" data-id="<?php echo $location['id']; ?>" class="<?php if ($count < 8) { echo 'visible'; } ?> single-location">
 					
 					<a href="single.php?id=<?php echo $location['id']; ?>" itemprop="name"><strong class="distance"></strong> <?php echo $location['name']; ?></a>
 						
