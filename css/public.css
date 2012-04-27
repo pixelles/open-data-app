@@ -15,6 +15,7 @@ body,
 header,
 nav,
 footer,
+footer p,
 article, 
 section, 
 div,
@@ -26,7 +27,8 @@ label,
 #geo,
 .locations,
 .single-location,
-.single-section {
+.single-section,
+.single-section ul {
 	margin: 0;
 	padding: 0;
 
@@ -481,6 +483,40 @@ label {
 
 .single-section h2 {
 	margin-top: -40px;
+}
+
+.single-section ul {
+	margin: 0 auto;
+	margin-top: 10px;
+	
+	list-style-type: none;
+}
+
+.single-section ul li strong {
+	display: block;
+	color: #042b13;
+	font-weight: bold;
+
+	text-transform: uppercase;
+}
+
+.single-section-transparent {
+	margin: 0 auto;
+	margin-top: 40px;
+	
+	display: block;
+	
+	width: 320px;
+	
+	background-color: #2f9a57;
+	
+	border: 8px solid #2f9a57;
+	
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-o-border-radius: 15px;
+	-ms-border-radius: 15px;
+	border-radius: 15px;
 }
 
 /* Footer */

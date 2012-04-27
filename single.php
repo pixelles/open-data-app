@@ -59,10 +59,13 @@ require_once 'includes/header.php';
 			
 			<li><strong>Latitude:</strong> <?php echo $results['latitude']; ?></p></li>
 		</ul>
+	</section>
+	
+	<section class="single-section-transparent">
 		
 		<?php if (isset($cookie[$id])) : ?>
 
-		<h3>Your rating</h3>
+		<h2>Your rating</h2>
 			<ol class="rater rater-usable">
 			<?php for ($i = 1; $i <= 5; $i++) : ?>
 			<?php $class = ($i <= $cookie[$id]) ? 'is-rated' : ''; ?>
@@ -72,7 +75,7 @@ require_once 'includes/header.php';
 		
 		<?php else : ?>
 		
-		<h3>Rate</h3>
+		<h2>Rate</h2>
 			<ol class="rater rater-usable">
 				<?php for ($i = 1; $i <= 5; $i++) : ?>
 			<li class="rater-level"><a href="rate.php?id=<?php echo $results['id']; ?>&rate=<?php echo $i; ?>">❤</a></li>
