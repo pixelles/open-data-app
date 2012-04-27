@@ -29,17 +29,20 @@ require_once '../includes/admin-header.php';
 
 ?>
 	<section>
+	
 		<h2>Add a New Splash Pad</h2>
 		<p class="section-description">Add a new splash pad to your existing list.</p>
 		<ul>
 			<li><a href="add.php">Add a Splash Pad</a></li>
 		</ul>
+		
 	</section>
 	
 	<section>
+	
 		<h2>Manage Splash Pads</h2>
 		<p class="section-description">Choose to edit or delete existing splash pads.</p>
-		
+	
 		<ul>
 			<?php foreach ($results as $location) : ?>
 				<li>
@@ -48,6 +51,7 @@ require_once '../includes/admin-header.php';
 				</li>
 			<?php endforeach; ?>
 		</ul>
+		
 	</section>
 
 <?php require_once '../includes/admin-footer.php'; ?>
