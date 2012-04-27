@@ -34,10 +34,19 @@ article section ul li p,
 	font-family: "Trebuchet MS", "Franklin Gothic Medium", Calibri, Arial, Helvetica, sans-serif;
 }
 
-html {
+html{
+	overflow-x: hidden;	
 	margin: 0 auto;
+	position: relative;
+	height: 100%;
 	
 	background-color: #2f9a57;
+}
+
+body {
+	overflow: hidden;
+	position: relative;
+	min-height: 100%;
 }
 
 article {
