@@ -39,6 +39,6 @@ var_dump($sql->errorInfo());
 require_once '../includes/users.php';
 
 if (!user_is_signed_in()) {
-	header('Location: sign-in.php');
+	header('Location: ../admin/sign-in.php');
 	exit;
 }
