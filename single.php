@@ -88,8 +88,8 @@ require_once 'includes/header.php';
 			
 			<?php endif; ?>
 		 
-		<div class="back"> <a href="index.php">Back</a> </div>
+			<div class="back"> <a href="index.php">Back</a> </div>
 		
-	</section>
+		</section>
 
 <?php require_once 'includes/footer.php'; ?>

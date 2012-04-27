@@ -9,7 +9,8 @@
 * @license New BSD License <https://github.com/pixelles/open-data-app/blob/master/LICENSE.txt>
 * @version <https://github.com/pixelles/open-data-app/blob/master/VERSION.txt>
 */
-?><!DOCTYPE HTML>
+?>
+<!DOCTYPE HTML>
 <html lang=en-ca>
 <head>
 	<meta charset=utf-8>
