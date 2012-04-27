@@ -35,3 +35,10 @@ foreach ($places_xml->Document->Placemark as $place) {
 }
 
 var_dump($sql->errorInfo());
+
+require_once '../includes/users.php';
+
+if (!user_is_signed_in()) {
+	header('Location: sign-in.php');
+	exit;
+}
