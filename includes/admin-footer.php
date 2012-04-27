@@ -13,10 +13,10 @@
 	
 	<footer>
 		<p>
-			This website was made with <img src="../images/footer-pixels.png" alt="pixels" title="pixels"/> and lots of <img src="../images/footer-heart.png" alt="love" title="love"/> by <a href="http://www.trishajessica.ca" target="_blank"><img src="../images/footer-copyright.png" alt="© Trisha Jessica Designs" title="© Trisha Jessica Designs"/></a> 2012
+			This website was made with <img src="images/footer-pixels.png" alt="pixels" title="pixels"/> and lots of <img src="images/footer-heart.png" alt="love" title="love"/> by <a href="http://www.trishajessica.ca" target="_blank"><img src="images/footer-copyright.png" alt="© Trisha Jessica Designs" title="© Trisha Jessica Designs"/></a> 2012
 		</p>
 	</footer>
-
+	<div class="footer-spacer"></div>
 </body>
 </html>
 
