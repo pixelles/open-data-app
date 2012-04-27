@@ -633,3 +633,21 @@ footer p {
 	color: #064a1f;
 	
 }
+
+
+/* Disquis */
+#disquis_thread {
+	width: 500px;
+	background-color: red;
+}
+
+/* Clear Fix */
+.clearfix:before,
+.clearfix:after{
+display: table;
+content: "";
+}
+
+.clearfix:after{
+clear: both;
+}
