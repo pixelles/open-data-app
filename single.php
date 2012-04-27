@@ -30,9 +30,9 @@ if (empty($results)) {
 $title = $results['name'];
 
 if ($results['rate_count'] > 0) {
-$rating = round($results['rate_total'] / $results['rate_count']);
+	$rating = round($results['rate_total'] / $results['rate_count']);
 } else {
-$rating = 0;
+	$rating = 0;
 }
 
 $cookie = get_rate_cookie();
@@ -40,55 +40,56 @@ $cookie = get_rate_cookie();
 require_once 'includes/header.php';
 
 ?>
-<section class="single-section">
-		<h2><?php echo $results['name']; ?></h2>
-		 <ul>
-		 	<li><strong>Average Rating:</strong> 	
-
-				<ol class="rater single-page-rater">
-				
-					<?php for ($i = 1; $i <= 5; $i++) : ?>
-					<?php $class = ($i <= $rating) ? 'is-rated' : ''; ?>
-						
-						<li class="rater-level <?php echo $class; ?>">❤</li>
-						
-					<?php endfor; ?>
-										
-				</ol>
-				
-			<li class="single-section-details"><strong>Street Address:</strong> <?php echo $results['street_address']; ?></p></li>
-			
-			<li class="single-section-details"><strong>Longitude:</strong> <?php echo $results['longitude']; ?></p></li>
-			
-			<li class="single-section-details"><strong>Latitude:</strong> <?php echo $results['latitude']; ?></p></li>
-		</ul>
-	</section>
+	<section class="single-section">
+			<h2><?php echo $results['name']; ?></h2>
+			 <ul>
+			 
+				<li><strong>Average Rating:</strong> 	
 	
-	<section class="single-section-transparent">
+					<ol class="rater single-page-rater">
+					
+						<?php for ($i = 1; $i <= 5; $i++) : ?>
+						<?php $class = ($i <= $rating) ? 'is-rated' : ''; ?>
+							
+							<li class="rater-level <?php echo $class; ?>">❤</li>
+							
+						<?php endfor; ?>
+											
+					</ol>
+					
+				<li class="single-section-details"><strong>Street Address:</strong> <?php echo $results['street_address']; ?></p></li>
+				
+				<li class="single-section-details"><strong>Longitude:</strong> <?php echo $results['longitude']; ?></p></li>
+				
+				<li class="single-section-details"><strong>Latitude:</strong> <?php echo $results['latitude']; ?></p></li>
+			</ul>
+		</section>
 		
-		<?php if (isset($cookie[$id])) : ?>
-
-		<h2 class="rate-pointer">Your rating</h2>
-			<ol class="rater rater-usable">
-			<?php for ($i = 1; $i <= 5; $i++) : ?>
-			<?php $class = ($i <= $cookie[$id]) ? 'is-rated' : ''; ?>
-				<li class="rater-level <?php echo $class; ?>">❤</li>
-			<?php endfor; ?>
-		</ol>
-		
-		<?php else : ?>
-		
-		<h2 class="rate-pointer">Rate This Pad</h2>
+		<section class="single-section-transparent">
+			
+			<?php if (isset($cookie[$id])) : ?>
+	
+			<h2 class="rate-pointer">Your rating</h2>
 			<ol class="rater rater-usable">
 				<?php for ($i = 1; $i <= 5; $i++) : ?>
-			<li class="rater-level"><a href="rate.php?id=<?php echo $results['id']; ?>&rate=<?php echo $i; ?>">❤</a></li>
+				<?php $class = ($i <= $cookie[$id]) ? 'is-rated' : ''; ?>
+					<li class="rater-level <?php echo $class; ?>">❤</li>
 				<?php endfor; ?>
 			</ol>
+			
+			<?php else : ?>
+			
+			<h2 class="rate-pointer">Rate This Pad</h2>
+			<ol class="rater rater-usable">
+				<?php for ($i = 1; $i <= 5; $i++) : ?>
+				<li class="rater-level"><a href="rate.php?id=<?php echo $results['id']; ?>&rate=<?php echo $i; ?>">❤</a></li>
+				<?php endfor; ?>
+			</ol>
+			
+			<?php endif; ?>
+		 
+		<div class="back"> <a href="index.php">Back</a> </div>
 		
-		<?php endif; ?>
-	 
-    <div class="back"> <a href="index.php">Back</a> </div>
-	
-</section>
+	</section>
 
 <?php require_once 'includes/footer.php'; ?>
